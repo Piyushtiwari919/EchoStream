@@ -13,6 +13,10 @@ const Login = ({ active }) => {
     //form validation
     let message = validateData(name?.current?.value,email.current.value, password.current.value);
     setErrorMessage(message);
+    if(message) return;
+    
+    //SignIn and SignUp User
+
   };
 
   return (
@@ -49,7 +53,7 @@ const Login = ({ active }) => {
             placeholder="Password"
             className="w-full text-white p-2 mb-4 bg-transparent border border-neutral-600 rounded"
           />
-          <p className="text-xl text-red-500">{errorMessage}</p>
+          <p className="text-xl text-red-500 mb-2">{errorMessage}</p>
           <button
             className="w-full py-2 rounded bg-red-600 text-white cursor-pointer"
             onClick={handleBtnClick}
