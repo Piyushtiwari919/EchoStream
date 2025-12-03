@@ -12,10 +12,9 @@ dist
 dist-ssr
 *.local
 .env
-firebase
-./.firebase
 .firebase
-
+firebase
+../netflix-gpt/.firebase
 
 # Editor directories and files
 .vscode/*
