@@ -1,15 +1,20 @@
 import { useRef, useState } from "react";
 import { validateData } from "../utils/validate.js";
 import Header from "./Header.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase.config.js";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice.js";
 
 const Login = ({ active }) => {
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -35,6 +40,23 @@ const Login = ({ active }) => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL:
+              "https://images.unsplash.com/photo-1763674038996-c8bbad13b13b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          })
+            .then(() => {
+              // Profile updated!
+              const {uid,email,displayName,photoURL} = auth.currentUser;
+              dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
+              navigate("/browse");
+            })
+            .catch((error) => {
+              // An error occurred
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              setErrorMessage(`${errorCode} : ${errorMessage}`);
+            });
           console.log(user);
         })
         .catch((error) => {
@@ -52,6 +74,7 @@ const Login = ({ active }) => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
+          navigate("/browse");
           console.log(user);
         })
         .catch((error) => {

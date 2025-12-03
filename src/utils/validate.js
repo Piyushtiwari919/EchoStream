@@ -1,7 +1,7 @@
 export const validateData = (name, email, password) => {
   let isNameValid;
   if (name !== undefined) {
-    isNameValid = /^[a-zA-Z][a-zA-Z0-9_]{1,15}$/.test(name);
+    isNameValid = /^[a-zA-Z]+(?:[ '-][a-zA-Z]+){0,49}$/.test(name);
   }
   else{
     isNameValid = true;
