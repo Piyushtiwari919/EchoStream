@@ -10,6 +10,7 @@ import {
 import { auth } from "../utils/firebase.config.js";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice.js";
+import { PHOTO_URL } from "../utils/constants.js";
 
 const Login = ({ active }) => {
   const [errorMessage, setErrorMessage] = useState(null);
@@ -42,8 +43,7 @@ const Login = ({ active }) => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://images.unsplash.com/photo-1763674038996-c8bbad13b13b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            photoURL:PHOTO_URL,
           })
             .then(() => {
               // Profile updated!
@@ -87,7 +87,7 @@ const Login = ({ active }) => {
 
   return (
     <div>
-      <Header />
+      <Header active={active}/>
       <div className="absolute inset-0 w-full h-full object-cover z-0">
         <img
           src="https://assets.nflxext.com/ffe/siteui/vlv3/4ffe3d37-1fc1-4d93-b61a-1fa58c11ccff/web/IN-en-20251124-TRIFECTA-perspective_9f00d07d-f08e-494f-8907-92371138c534_large.jpg"
