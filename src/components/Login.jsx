@@ -13,7 +13,7 @@ import { addUser } from "../utils/userSlice.js";
 
 const Login = ({ active }) => {
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
   const name = useRef(null);
   const email = useRef(null);
@@ -49,20 +49,20 @@ const Login = ({ active }) => {
               // Profile updated!
               const {uid,email,displayName,photoURL} = auth.currentUser;
               dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
-              navigate("/browse");
+              // navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
               const errorCode = error.code;
-              const errorMessage = error.message;
-              setErrorMessage(`${errorCode} : ${errorMessage}`);
+              const errorMsg = error.message;
+              setErrorMessage(`${errorCode} : ${errorMsg}`);
             });
           console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
-          setErrorMessage(`${errorCode} : ${errorMessage}`);
+          const errorMsg = error.message;
+          setErrorMessage(`${errorCode} : ${errorMsg}`);
         });
     } else {
       //SignIn
@@ -74,13 +74,13 @@ const Login = ({ active }) => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
+          // navigate("/browse");
           console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
-          setErrorMessage(`${errorCode} : ${errorMessage}`);
+          const errorMsg = error.message;
+          setErrorMessage(`${errorCode} : ${errorMsg}`);
         });
     }
   };
