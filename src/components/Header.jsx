@@ -41,7 +41,7 @@ const Header = ({active}) => {
       }
     });
     //Unsubscribe when compenent unmount
-    return ()=> unsubscribe();
+    return () => unsubscribe();
   }, []);
   const handleSignOut = () => {
     signOut(auth)
