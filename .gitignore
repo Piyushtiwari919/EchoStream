@@ -13,6 +13,7 @@ dist-ssr
 *.local
 .env
 .firebase
+./.firebase
 firebase
 ../netflix-gpt/.firebase
 
