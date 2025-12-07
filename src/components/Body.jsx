@@ -15,8 +15,9 @@ const Body = () => {
     createRoutesFromElements(
       <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
         <Route path="" element={<Login active={false} />} />
-        <Route path="/signup" element={<UserSignUp />} />
+        <Route path="signup" element={<UserSignUp />} />
         <Route path="browse" element={<Browse />} />
+        <Route path="error" element={<ErrorPage/>}/>
       </Route>
     )
   );
