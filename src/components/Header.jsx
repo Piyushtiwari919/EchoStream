@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice.js";
 import { LOGO } from "../utils/constants.js";
+import { removeNowPlayingMovies } from "../utils/moviesSlice.js";
 
 const Header = ({active}) => {
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ const Header = ({active}) => {
       } else {
         // User is signed out
         dispatch(removeUser());
+        dispatch(removeNowPlayingMovies());
         if(!active){
         navigate("/");
         }
