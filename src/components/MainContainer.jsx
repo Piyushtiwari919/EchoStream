@@ -10,7 +10,7 @@ const MainContainer = ()=>{
     console.log(mainMovie);
 
     return(
-        <div className="w-dvw">
+        <div className="w-full max-w-screen mx-auto">
             <VideoTitle title={original_title} overview={overview}/>
             <VideoBackground movieId={id}/>
         </div>
