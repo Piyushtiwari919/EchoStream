@@ -10,7 +10,7 @@ const MainContainer = ()=>{
     console.log(mainMovie);
 
     return(
-        <div>
+        <div className="w-dvw">
             <VideoTitle title={original_title} overview={overview}/>
             <VideoBackground movieId={id}/>
         </div>
