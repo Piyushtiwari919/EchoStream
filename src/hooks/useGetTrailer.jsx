@@ -10,7 +10,7 @@ const useGetTrailer = (movieId) => {
       API_OPTIONS
     );
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     const filteredData = json?.results.filter((video) => {
       return video.type.includes("Trailer");
     });
@@ -19,7 +19,7 @@ const useGetTrailer = (movieId) => {
       ? filteredData[0]
       : json?.results[0];
     dispatch(addTrailerVideo(movieTrailer));
-    console.log(movieTrailer);
+    // console.log(movieTrailer);
   };
   useEffect(() => {
     getMovieVideos();

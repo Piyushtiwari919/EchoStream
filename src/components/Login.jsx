@@ -57,7 +57,7 @@ const Login = ({ active }) => {
               const errorMsg = error.message;
               setErrorMessage(`${errorCode} : ${errorMsg}`);
             });
-          console.log(user);
+          // console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -75,7 +75,7 @@ const Login = ({ active }) => {
           // Signed in
           const user = userCredential.user;
           // navigate("/browse");
-          console.log(user);
+          // console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;

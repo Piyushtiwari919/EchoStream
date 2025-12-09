@@ -7,7 +7,7 @@ const MainContainer = ()=>{
     if(movies === null || movies.length === 0) return;
     const mainMovie = movies[0];
     const {original_title , id, overview} = mainMovie;
-    console.log(mainMovie);
+    // console.log(mainMovie);
 
     return(
         <div className="w-full max-w-screen mx-auto">

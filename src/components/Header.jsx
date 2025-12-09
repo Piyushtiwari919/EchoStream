@@ -13,7 +13,7 @@ const Header = ({active}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
-  console.log(user);
+  // console.log(user);
   useEffect(() => {
     //Called when auth state cahnged
     const unsubscribe = onAuthStateChanged(auth, (user) => {
