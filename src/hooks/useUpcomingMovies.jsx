@@ -12,7 +12,6 @@ const useUpcomingMovies = () => {
     );
     const data = await res.json();
     dispatch(addUpcomingMovies(data.results));
-    // console.log(data);
   };
   useEffect(() => {
     topRatedMovies();

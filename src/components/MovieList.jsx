@@ -7,11 +7,13 @@ const MovieList = ({ title, movies }) => {
 
   const scrollerRef = useRef(null);
 
+  //Scrolling the cards
   function scrollBy(amount) {
     if (!scrollerRef.current) return;
     scrollerRef.current.scrollBy({ left: amount, behavior: "smooth" });
   }
 
+  //Scroll the cards using keys
   function onKeyDown(e) {
     if (e.key === "ArrowRight") scrollByAmount(200);
     if (e.key === "ArrowLeft") scrollByAmount(-200);
