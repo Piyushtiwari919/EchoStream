@@ -18,19 +18,19 @@ const MovieList = ({ title, movies }) => {
   }
   return (
     <div className="">
-      <h1 className="text-4xl m-4 font-bold">{title}</h1>
+      <h1 className="text-3xl text-shadow-black text-shadow-md text-white mx-2 mt-4 font-bold">{title}</h1>
       <div className="relative">
         <button
           aria-label="Scroll left"
           onClick={() => scrollBy(-300)}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/80 shadow hover:bg-white"
+          className="absolute cursor-pointer left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/80 shadow hover:bg-white"
         >
           <i class="fa-solid fa-angle-left"></i>
         </button>
         <button
           aria-label="Scroll right"
           onClick={() => scrollBy(300)}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/80 shadow hover:bg-white"
+          className="absolute cursor-pointer right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/80 shadow hover:bg-white"
         >
           <i class="fa-solid fa-angle-right"></i>
         </button>

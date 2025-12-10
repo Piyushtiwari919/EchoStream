@@ -4,11 +4,13 @@ import MovieList from "./MovieList.jsx";
 const SecondaryContainer = ()=>{
     const movies = useSelector(store => store.movies);
     return(
-        <div>
+        <div className=" bg-black">
+            <div className="-mt-36 relative z-40">
             <MovieList title={"Now Playing"} movies={movies.nowPlaying}/>
-            <MovieList title={"Popular"} movies={movies.nowPlaying}/>
-            <MovieList title={"Top Rated"} movies={movies.nowPlaying}/>
-            <MovieList title={"Upcoming"} movies={movies.nowPlaying}/>
+            <MovieList title={"Popular"} movies={movies.popularMovies}/>
+            <MovieList title={"Top Rated"} movies={movies.topRatedMovies}/>
+            <MovieList title={"Upcoming"} movies={movies.upcomingMovies}/>
+            </div>
         </div>
     )
 }
