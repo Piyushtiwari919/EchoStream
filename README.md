@@ -1,8 +1,59 @@
 ## Building...
-# Description : This project named EchoStream used for exploring movies. 
+# Description : This project named EchoStream used for exploring movies and TV shows, providing users with detailed information, trailers, and personalized recommendations based on their viewing history. It leverages The Movie Database (TMDb) API to fetch a vast collection of media content.
 
-# React + Vite
+# Technologies Used :
+ - React.js
+ - Vite
+ - Babel
+ - Firebase Authentication
+ - TMDb API
+ - Tailwind CSS
+ - Redux Toolkit
+ - React Router DOM
 
+# Project Structure:
+ 
+ - src
+    - components
+        - Body
+        - Browse
+        - ErrorPage
+        - Header
+        - Layout
+        - Login
+        - MainContainer
+        - MovieCard
+        - MovieList
+        - SecondaryContainer
+        - VideoBackground
+        - VideoTitle
+    - hooks
+        - useGetTrailer
+        - useNowPlayingMovies
+        - usePopularMovies
+        - useTopRatedMovies
+        - useUpcomingMovies
+    - utils
+        - appStore
+        - constants
+        - firebase.config
+        - movieSlice
+        - userSlice
+        - validate
+    - App.css
+    - App.jsx
+    - index.css
+    - main.jsx
+ - public
+    - Error-img.png
+ - .eslintrc.json
+ - .gitignore
+ - index.html
+ - package.json
+ - README.md
+ - vite.config.js
+
+# React + Vite Template
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
