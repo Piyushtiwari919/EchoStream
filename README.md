@@ -1,5 +1,5 @@
 ## Building...
-# Description : Create a website named EchoStream used for exploring movies. 
+# Description : This project named EchoStream used for exploring movies. 
 
 # React + Vite
 
