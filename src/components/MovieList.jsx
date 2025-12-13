@@ -20,7 +20,7 @@ const MovieList = ({ title, movies }) => {
   }
   return (
     <div className="">
-      <h1 className="text-3xl text-shadow-black text-shadow-md text-white mx-2 mt-4 font-bold">{title}</h1>
+      <h1 className="text-3xl max-sm:text-xl text-shadow-black text-shadow-md text-white mx-2 mt-4 font-bold">{title}</h1>
       <div className="relative">
         <button
           aria-label="Scroll left"
