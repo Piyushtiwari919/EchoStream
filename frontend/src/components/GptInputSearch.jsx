@@ -3,33 +3,31 @@ import { useState, useRef } from "react";
 import { auth } from "../utils/firebase.config.js";
 import lang from "../utils/languageConstants.js";
 import { useNavigate } from "react-router-dom";
-const GptInputSearch = async () => {
-  const navigate = useNavigate();
-  if (!auth.currentUser){
-    navigate("/");
-  }
-
+const GptInputSearch = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const searchInput = useRef(null);
-
-  const token = await auth.currentUser.getIdToken();
-
+  const navigate = useNavigate();
   const language = useSelector((store) => store.config.language);
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
   const handleGptSearch = async () => {
+      if (!auth.currentUser){
+        navigate("/");
+        return;
+      }
     if (searchInput.current.value == "" || !searchInput.current.value) return;
     const query = searchInput.current.value;
     setLoading(true);
     try {
+      const idToken = await auth.currentUser.getIdToken();
       const response = await fetch("http://localhost:5000/api/recommend", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${idToken}`
         },
         body: JSON.stringify({ movieQuery: query }),
       });
