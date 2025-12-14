@@ -31,7 +31,7 @@ const GptSearch = () => {
             className="absolute right-3 top-3 cursor-pointer sm:text-xl"
             onClick={handleGptSearchContainer}
           >
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </button>
         </div>
         <GptInputSearch />
