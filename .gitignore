@@ -28,4 +28,5 @@ firebase
 *.sln
 *.sw?
 
-./assests.md
+./assets.md
+assets.md
