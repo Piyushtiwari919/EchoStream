@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice.js";
 import { LOGO } from "../utils/constants.js";
 import { removeNowPlayingMovies } from "../utils/moviesSlice.js";
+import { toggleGptSearchView } from "../utils/gptSlice.js";
 
 const Header = ({active}) => {
   const navigate = useNavigate();
@@ -45,6 +46,10 @@ const Header = ({active}) => {
     //Unsubscribe when compenent unmount
     return () => unsubscribe();
   }, []);
+
+  const handleGptSearchClick = ()=>{
+    dispatch(toggleGptSearchView());
+  }
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -65,6 +70,7 @@ const Header = ({active}) => {
       />
       {user && (
         <div className="flex">
+          <button className="bg-purple-800 text-white p-2 mr-4 rounded-md font-bold cursor-pointer" onClick={handleGptSearchClick}>GptSearch</button>
           <img src={user?.photoURL} alt="usericon" className="w-10 h-10 mx-2" />
           <button
             onClick={handleSignOut}
