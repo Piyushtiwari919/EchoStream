@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { auth } from "../utils/firebase.config.js";
 import lang from "../utils/languageConstants.js";
 import { useNavigate } from "react-router-dom";
+import Shimmer from "./Shimmer.jsx";
 import { API_OPTIONS } from "../utils/constants.js";
 import { addGeminiMovieResult } from "../utils/gptSlice.js";
 const GptInputSearch = () => {
@@ -64,7 +65,9 @@ const GptInputSearch = () => {
         searchMovieTMDB(movie.title)
       );
       const tmdbMovieData = await Promise.all(promiseArray);
-      dispatch(addGeminiMovieResult({movieNames:geminiMovies,tmdbMovieData}));
+      dispatch(
+        addGeminiMovieResult({ movieNames: geminiMovies, tmdbMovieData })
+      );
       console.log(tmdbMovieData);
       if (!geminiMovies) {
         throw new Error("Gemini Response Error");
@@ -76,6 +79,31 @@ const GptInputSearch = () => {
       setLoading(false);
     }
   };
+
+  if (loading) {
+    return (
+      <>
+        <form className="w-full" onSubmit={handleSubmit}>
+          <input
+            ref={searchInput}
+            type="text"
+            name="queryInput"
+            placeholder={lang[language].GptSearchPlaceholder}
+            className="m-2 pl-2 py-2 border-2 border-black rounded-md w-3/4"
+            disabled={loading}
+          />
+          <button
+            className="bg-red-600 p-2 text-white m-2 font-bold rounded-md cursor-pointer"
+            onClick={handleGptSearch}
+          >
+            {loading ? "Thinking...." : lang[language].search}
+          </button>
+        </form>
+        <Shimmer loading={loading} />
+      </>
+    );
+  }
+
   return (
     <form className="w-full" onSubmit={handleSubmit}>
       <input
