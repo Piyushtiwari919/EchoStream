@@ -2,7 +2,6 @@ import MovieCard from "./MovieCard.jsx";
 import { useRef } from "react";
 
 const MovieList = ({ title, movies }) => {
-  console.log(movies);
   if (!movies || movies.length === 0) return;
 
   const scrollerRef = useRef(null);
