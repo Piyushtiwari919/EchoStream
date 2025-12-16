@@ -2,6 +2,37 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function generateWithRetry(model, prompt, retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      return response.text(); // Success! Return the text immediately.
+    } catch (error) {
+      if (i === retries - 1) throw error;
+      if (
+        error.message.includes("503") ||
+        error.message.includes("overloaded")
+      ) {
+        const waitTime = Math.pow(2, i) * 1000; // 1s, 2s, 4s...
+        console.warn(
+          `Gemini overloaded. Retrying in ${waitTime}ms... (Attempt ${
+            i + 1
+          }/${retries})`
+        );
+        await delay(waitTime);
+      } else if (error.message.includes("429")) {
+        throw error;
+      } else {
+        // If it's NOT a 503 (e.g., Invalid API Key), don't retry. Crash fast.
+        throw error;
+      }
+    }
+  }
+}
+
 const getApiResponse = async (req, res) => {
   try {
     const { movieQuery } = req.body;
@@ -9,7 +40,6 @@ const getApiResponse = async (req, res) => {
     if (!movieQuery) {
       return res.status(400).json({ error: "Query is required" });
     }
-
     const model = genAI.getGenerativeModel({
       model: "gemini-2.5-flash",
       generationConfig: { responseMimeType: "application/json" },
@@ -35,9 +65,7 @@ const getApiResponse = async (req, res) => {
             }
         `;
 
-    const result = await model.generateContent(prompt);
-    const response = result.response;
-    const text = response.text();
+    const text = await generateWithRetry(model, prompt);
     if (!text) {
       throw new Error("Gemini returned empty response");
     }
@@ -45,9 +73,11 @@ const getApiResponse = async (req, res) => {
       .replace(/```json/g, "")
       .replace(/```/g, "")
       .trim();
+
     const jsonResponse = JSON.parse(cleanedText);
 
     return res.json({ recommendations: jsonResponse });
+
   } catch (error) {
     console.error("Error generating recommendations:", error);
     return res.status(500).json({ error: "Failed to fetch recommendations." });

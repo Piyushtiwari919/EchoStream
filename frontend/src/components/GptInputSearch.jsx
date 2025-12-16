@@ -117,6 +117,7 @@ const GptInputSearch = () => {
       <button
         className="bg-red-600 p-2 text-white m-2 font-bold rounded-md cursor-pointer"
         onClick={handleGptSearch}
+        disabled={loading&&true}
       >
         {loading ? "Thinking...." : lang[language].search}
       </button>

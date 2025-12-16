@@ -6,6 +6,7 @@ const GptMoviesSuggestion = ()=>{
     const {movieNames, geminiMovies} = movieData;
     return(
         <div>
+            
         </div>
     )
 }
