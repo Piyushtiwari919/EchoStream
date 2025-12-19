@@ -18,7 +18,7 @@ const MovieList = ({ title, movies }) => {
     if (e.key === "ArrowLeft") scrollByAmount(-200);
   }
   return (
-    <div className="">
+    <div>
       <h1 className="text-3xl max-sm:text-xl text-shadow-black text-shadow-md text-white mx-2 mt-4 font-bold">
         {title}
       </h1>
@@ -41,7 +41,7 @@ const MovieList = ({ title, movies }) => {
           ref={scrollerRef}
           tabIndex={0}
           onKeyDown={onKeyDown}
-          className="overflow-x-auto overflow-y-hidden whitespace-nowrap snap-x snap-mandatory hide-scrollbar p-4 selection:none ml-2"
+          className="overflow-x-auto overflow-y-hidden whitespace-nowrap snap-x snap-mandatory hide-scrollbar p-4 selection:none mx-2"
         >
           {movies.map((movie) => {
             return (

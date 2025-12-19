@@ -16,6 +16,11 @@ const MovieCard = ({ posterPath, movieTitle, movieInfo }) => {
       handleCardClick();
     }
   };
+
+  if(!posterPath){
+    return;
+  }
+
   return (
     <div
       className="inline-block flex-none h-40 rounded-lg overflow-hidden shadow-md mr-4 bg-gray-100 snap-start"

@@ -75,6 +75,9 @@ const getApiResponse = async (req, res) => {
       .trim();
 
     const jsonResponse = JSON.parse(cleanedText);
+    if(!jsonResponse){
+      throw new Error("No Json response");
+    }
 
     return res.json({ recommendations: jsonResponse });
 

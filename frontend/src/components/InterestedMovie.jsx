@@ -17,7 +17,7 @@ const InterestedMovie = () => {
     <div className="fixed inset-0 z-50 flex justify-center bg-black/40 backdrop-blur-md">
       <div
         className="bg-fuchsia-50 rounded-xl p-6 shadow-xl my-6 w-full 
-        md:w-3/5 lg:w-1/2 flex flex-col items-center relative max-h-[90vh]
+        md:w-3/5 lg:w-1/2 flex flex-col items-center relative max-h-[90vh] mx-1
         overflow-y-auto overscroll-contain"
       >
         <div className="w-full">
