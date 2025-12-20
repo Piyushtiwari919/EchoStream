@@ -91,7 +91,7 @@ const Login = ({ active }) => {
       <div className="absolute inset-0 w-full h-full object-cover z-0">
         <img
           src="https://assets.nflxext.com/ffe/siteui/vlv3/4ffe3d37-1fc1-4d93-b61a-1fa58c11ccff/web/IN-en-20251124-TRIFECTA-perspective_9f00d07d-f08e-494f-8907-92371138c534_large.jpg"
-          className="h-dvh w-dvw"
+          className="h-dvh w-dvw object-cover"
         />
       </div>
       <div className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-full max-w-md bg-[#222]/90 p-8 rounded-md">
