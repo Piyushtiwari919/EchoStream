@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import GptInputSearch from "./GptInputSearch.jsx";
-import GptMoviesSuggestion from "./GptMoviesSuggestion.jsx";
+import GeminiInputSearch from "./GeminiInputSearch.jsx";
+import GeminiMoviesSuggestion from "./GeminiMoviesSuggestion.jsx";
 import { toggleGptSearchView } from "../utils/gptSlice.js";
 import { SUPPORTED_LANGUAGES } from "../utils/constants.js";
 import { changeLanguage } from "../utils/configSlice.js";
@@ -47,8 +47,8 @@ const GptSearch = () => {
             <i className="fa-solid fa-xmark"></i>
           </button>
         </div>
-        <GptInputSearch />
-        <GptMoviesSuggestion />
+        <GeminiInputSearch />
+        <GeminiMoviesSuggestion />
       </div>
     </div>
   );

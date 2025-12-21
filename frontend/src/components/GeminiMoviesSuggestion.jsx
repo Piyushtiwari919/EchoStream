@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import MovieList from "./MovieList.jsx";
 
-const GptMoviesSuggestion = () => {
+const GeminiMoviesSuggestion = () => {
   const movieData = useSelector((store) => store.gpt);
   const { movieNames, geminiMovies } = movieData;
   if (!movieNames) return;
@@ -20,4 +20,4 @@ const GptMoviesSuggestion = () => {
   );
 };
 
-export default GptMoviesSuggestion;
+export default GeminiMoviesSuggestion;
