@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice.js";
-import { LOGO } from "../utils/constants.js";
 import { removeNowPlayingMovies } from "../utils/moviesSlice.js";
 import { toggleGptSearchView } from "../utils/gptSlice.js";
 import { Activity } from "react";
@@ -68,7 +67,7 @@ const Header = ({ active }) => {
   };
   return (
     <div className="absolute bg-linear-to-b from-black px-6 max-sm:py-1 py-2 z-40 w-full flex justify-between items-center">
-      <img src={LOGO} className="w-40 max-sm:w-30 my-0" alt="logo" />
+      <img src="/logo.png" className="w-60 max-sm:w-30 my-0" alt="logo" />
       {user && (
         <>
           <div className="flex max-sm:hidden">
