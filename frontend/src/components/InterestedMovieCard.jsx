@@ -12,7 +12,7 @@ const InterestedMovieCard = ({ movieInfo }) => {
   }, []);
   if (!movieInfo) return;
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center text-black">
       <h2 className="text-2xl font-bold mb-4">{movieInfo.title}</h2>
       <img
         alt={movieInfo.title}

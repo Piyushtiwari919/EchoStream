@@ -23,7 +23,7 @@ const MovieCard = ({ posterPath, movieTitle, movieInfo }) => {
 
   return (
     <div
-      className="inline-block flex-none h-40 rounded-lg overflow-hidden shadow-md mr-4 bg-gray-100 snap-start"
+      className="inline-block flex-none h-40 rounded-lg overflow-hidden shadow-md mr-4 bg-gray-100 snap-start text-black"
       role="button"
       onClick={handleCardClick}
       onKeyDown={handleKeyDown}
