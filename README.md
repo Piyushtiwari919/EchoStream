@@ -69,6 +69,7 @@ EchoStream/
 
 ## Installation & Setup
 
+```
 1. **Clone the Repository:**
 # Clone the repo
 git clone [https://github.com/your-username/echostream.git](https://github.com/your-username/echostream.git)
@@ -80,7 +81,6 @@ npm install
 # Install Frontend Deps
 cd ../frontend
 npm install
-```
 
 2. **Set Up Environment Variables:**
    - VITE_TMDB_API_KEY=your_tmdb_key_here
@@ -93,7 +93,7 @@ npm install
    - Start Frontend Client:
       cd ../frontend
       npm run dev
-      
+
 ```
 
 ## 🤝 Contributing
