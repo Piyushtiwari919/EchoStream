@@ -1,56 +1,106 @@
-# Building...
-## Description : This project named EchoStream used for exploring movies and TV shows, providing users with detailed information, trailers, and personalized recommendations based on their viewing history. It leverages The Movie Database (TMDb) API to fetch a vast collection of media content.
+# 🎬 EchoStream
 
-## Technologies Used :
- - React.js
- - Vite
- - Babel
- - Firebase Authentication
- - TMDb API
- - GEMINI AI API
- - Tailwind CSS
- - Redux Toolkit
- - React Router DOM
+![Project Status](https://img.shields.io/badge/status-active-success.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
+![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat&logo=firebase)
 
-## Project Structure:
- 
- - backend/ : 
-    - index.js 
-    - package.json
-    - package-lock.json
-    - .gitignore
- - frontend/ :
-    - public/
-    - src/
-       - components
-       - hooks
-       - utils
-       - App.jsx
-       - main.jsx
-       - index.css
-       - App.css
-    - index.html
-    - package.json
-    - package-lock.json
-    - vite.config.js
-    - .gitignore
-    - eslint.config.js
- - firebase.json
- - Readme.md
- - .gitignore
+**EchoStream** is an intelligent, immersive media discovery platform designed to solve the "choice paralysis" users face when navigating vast streaming libraries.
 
-# React + Vite Template
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+By fusing the comprehensive metadata of the **TMDb API** with the generative reasoning of **Google's Gemini AI**, EchoStream doesn't just list movies—it understands user intent, offering context-aware recommendations and a seamless, tailored browsing experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features & Impact
 
-## React Compiler
+- **AI-Powered Curation:** Leverages **Gemini AI** to move beyond simple genre matching, providing nuanced recommendations based on plot, mood, and thematic elements.
+- **Blazing Fast UI:** Built on **Vite** and **React**, ensuring near-instant page loads and smooth transitions even when rendering heavy media assets.
+- **Secure Authentication:** Integrated **Firebase Authentication** for a robust, serverless identity management system that handles user sessions securely.
+- **Responsive Design:** A mobile-first approach using **Tailwind CSS**, ensuring the interface is sleek and accessible across all device sizes.
+- **State Management:** Utilizes **Redux Toolkit** for predictable state flow, effectively managing complex data streams like user watch history and API caching.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend Client
+
+- **Framework:** React.js (v18+)
+- **Build Tool:** Vite (for HMR and optimized bundling)
+- **Styling:** Tailwind CSS
+- **Routing:** React Router DOM
+- **State Management:** Redux Toolkit
+- **HTTP Client:** Axios / Fetch API
+
+### Backend & Services
+
+- **Runtime:** Node.js (Express)
+- **Authentication:** Firebase Auth
+- **AI Integration:** Google Gemini API
+- **Data Source:** The Movie Database (TMDb) API
+
+---
+
+## 📂 Project Architecture
+
+The project follows a decoupled client-server architecture.
+
+```bash
+EchoStream/
+├── backend/                # Node.js Server Layer
+│   ├── controllers/        # Request handlers for different routes
+│   ├── routes/             # API route definitions
+│   ├── index.js            # Entry point for backend logic
+│   └── package.json        # Backend dependencies
+├── frontend/               # React Client Layer
+│   ├── src/
+│   │   ├── components/     # Reusable UI atoms and molecules
+│   │   ├── hooks/          # Custom React hooks for logic reuse
+│   │   ├── utils/          # Helper functions,constants and Redux slices and store configuration
+│   │   └── App.jsx         # Root component
+│   │   └── main.jsx        # Application entry point
+│   └── index.html          # HTML template
+│   └── vite.config.js      # Vite configuration
+│   └── package.json        # Frontend dependencies
+└── firebase.json           # Firebase hosting/config
+└── README.md               # Project documentation
+```
+
+## Installation & Setup
+
+1. **Clone the Repository:**
+# Clone the repo
+git clone [https://github.com/your-username/echostream.git](https://github.com/your-username/echostream.git)
+
+# Install Backend Deps
+cd echostream/backend
+npm install
+
+# Install Frontend Deps
+cd ../frontend
+npm install
+```
+
+2. **Set Up Environment Variables:**
+   - VITE_TMDB_API_KEY=your_tmdb_key_here
+   - VITE_GOOGLE_API_KEY=your_gemini_key_here
+
+3. **Run the Application:**
+   - Start Backend Server:
+      cd echostream/backend
+      npm run dev
+   - Start Frontend Client:
+      cd ../frontend
+      npm run dev
+      
+```
+
+## 🤝 Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your features or fixes.
+
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
