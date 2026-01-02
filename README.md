@@ -6,14 +6,44 @@
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat&logo=firebase)
 
-## Screenshots
+<br />
 
-![Home Page](./frontend/src/assets/Home.png)
-![Movie Description Page](./frontend/src/assets/Movie_Description.png)
+<div align="center">
+  <strong>Intelligent media discovery powered by Google Gemini AI and TMDb.</strong>
+</div>
+
+<!-- <div align="center">
+  <a href="YOUR_LIVE_DEMO_LINK_HERE">
+    <img src="https://img.shields.io/badge/View_Demo-37a7df?style=for-the-badge&logo=googlechrome&logoColor=white" alt="View Demo"/>
+  </a>
+  <a href="YOUR_REPO_LINK_HERE/issues">
+    <img src="https://img.shields.io/badge/Report_Bug-CC313D?style=for-the-badge&logo=github&logoColor=white" alt="Report Bug"/>
+  </a>
+</div>
+
+<br /> -->
+
+## About The Project
 
 **EchoStream** is an intelligent, immersive media discovery platform designed to solve the "choice paralysis" users face when navigating vast streaming libraries.
 
 By fusing the comprehensive metadata of the **TMDb API** with the generative reasoning of **Google's Gemini AI**, EchoStream doesn't just list movies—it understands user intent, offering context-aware recommendations and a seamless, tailored browsing experience.
+
+## Previews
+
+<div align="center"> 
+  <img src="./frontend/src/assets/Home.png" alt="Home Page" width="700"/>
+  <br>
+  <em>Home Page Dashboard</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="./frontend/src/assets/Movie_Description.png" alt="Movie Description Page" width="700"/>
+  <br>
+  <em>AI-Powered Description View</em>
+</div>
 
 ---
 
@@ -102,6 +132,7 @@ npm install
 ```
 
 ## 🤝 Contributing
+
 Contributions are welcome! Please fork the repository and create a pull request with your features or fixes.
 
 1. Fork the Project
