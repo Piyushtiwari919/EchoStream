@@ -12,17 +12,6 @@
   <strong>Intelligent media discovery powered by Google Gemini AI and TMDb.</strong>
 </div>
 
-<!-- <div align="center">
-  <a href="YOUR_LIVE_DEMO_LINK_HERE">
-    <img src="https://img.shields.io/badge/View_Demo-37a7df?style=for-the-badge&logo=googlechrome&logoColor=white" alt="View Demo"/>
-  </a>
-  <a href="YOUR_REPO_LINK_HERE/issues">
-    <img src="https://img.shields.io/badge/Report_Bug-CC313D?style=for-the-badge&logo=github&logoColor=white" alt="Report Bug"/>
-  </a>
-</div>
-
-<br /> -->
-
 ## About The Project
 
 **EchoStream** is an intelligent, immersive media discovery platform designed to solve the "choice paralysis" users face when navigating vast streaming libraries.
@@ -42,7 +31,7 @@ By fusing the comprehensive metadata of the **TMDb API** with the generative rea
 <div align="center">
   <img src="./frontend/src/assets/Movie_Description.png" alt="Movie Description Page" width="700"/>
   <br>
-  <em>AI-Powered Description View</em>
+  <em>Description View</em>
 </div>
 
 ---
