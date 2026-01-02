@@ -136,7 +136,7 @@ const Login = ({ active }) => {
           </p>
         ) : (
           <p className="text-gray-400 my-4 mt-5">
-            New To Netflix?{" "}
+            New To EchoStream?{" "}
             <Link
               to="/signup"
               className="text-white hover:border-b-2 border-white"

@@ -6,6 +6,8 @@
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat&logo=firebase)
 
+## Screenshots
+
 ![Home Page](./frontend/src/assets/Home.png)
 ![Movie Description Page](./frontend/src/assets/Movie_Description.png)
 

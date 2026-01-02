@@ -28,14 +28,14 @@ const MovieList = ({ title, movies }) => {
           onClick={() => scrollBy(-300)}
           className="absolute cursor-pointer left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/80 shadow hover:bg-white"
         >
-          <i className="fa-solid fa-angle-left"></i>
+          <i className="fa-solid fa-angle-left text-black"></i>
         </button>
         <button
           aria-label="Scroll right"
           onClick={() => scrollBy(300)}
           className="absolute cursor-pointer right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/80 shadow hover:bg-white"
         >
-          <i className="fa-solid fa-angle-right"></i>
+          <i className="fa-solid fa-angle-right text-black"></i>
         </button>
         <div
           ref={scrollerRef}
