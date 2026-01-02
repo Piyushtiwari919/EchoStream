@@ -6,6 +6,9 @@
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat&logo=firebase)
 
+![Home Page](./frontend/src/assets/Home.png)
+![Movie Description Page](./frontend/src/assets/Movie_Description.png)
+
 **EchoStream** is an intelligent, immersive media discovery platform designed to solve the "choice paralysis" users face when navigating vast streaming libraries.
 
 By fusing the comprehensive metadata of the **TMDb API** with the generative reasoning of **Google's Gemini AI**, EchoStream doesn't just list movies—it understands user intent, offering context-aware recommendations and a seamless, tailored browsing experience.
