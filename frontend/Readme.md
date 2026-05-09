@@ -1,4 +1,4 @@
-# EchoStream Frontend
+# 🎬 EchoStream Frontend
 This is the frontend part of the EchoStream project, built using React.js and Vite. It provides an intuitive user interface for exploring movies and TV shows, fetching data from The Movie Database (TMDb) API, and integrating with Firebase Authentication for user management.
 ## Technologies Used
 - React.js
