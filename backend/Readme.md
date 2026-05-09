@@ -1,4 +1,4 @@
-# Echo Stream Backend
+# 🎬 EchoStream Backend
 This directory contains the backend implementation for the Echo Stream service The backend is responsible for handling API requests, managing data storage, and serving content to clients.
 ## Technologies Used
 - Node.js
